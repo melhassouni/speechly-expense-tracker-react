@@ -40,7 +40,7 @@ const CreditCart = () => {
                     <h1 className='MonumentExtended-Black py-4 md:text-2xl text-xl max-w-[60%] text-purple-800'>{getTotal()}$</h1>
                 </div>
                 <div >
-                    <h1 className='MonumentExtended-Regular text-xs max-w-[80%] uppercase'>{nameInput}</h1>
+                    <h1 className='MonumentExtended-Regular text-xs max-w-[80%] uppercase'>Mohamed Ali El Hassouni</h1>
                 </div>
             </div>
             <div className='min-w-[20%] order-3 md:order-3 flex justify-center items-center text-center'>
