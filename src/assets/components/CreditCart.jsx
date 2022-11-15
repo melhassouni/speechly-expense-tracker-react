@@ -7,8 +7,6 @@ import { useRef } from 'react';
 const CreditCart = () => {
   
     const transactions = useSelector( state => state.transactions )
-    const [nameInput, setNameInput] = useState(localStorage.getItem('user') || 'user')
-    const inputVal = useRef(null)
 
     const getTotal = () =>{
         let total = transactions.reduce((prvVal, curVal, i)=>{
@@ -22,20 +20,10 @@ const CreditCart = () => {
     return total.toFixed(2)
     }
 
-    function handleEnterChange(e){
-        if(e.key === 'Enter'){
-            alert(inputVal.current.value)
-
-            localStorage.setItem('user', inputVal.current.value)
-	    }
-    }
 
 
     return (
     <div className='w-full min-h[100vh]'>
-        <div className='flex justify-center items-center pt-8'>
-            <input type="text" className='nameInput' ref={inputVal} onChange={handleEnterChange}/>
-        </div>
         <div className='w-full pt-4 pb-12 flex md:flex-row flex-col justify-around md:items-end items-center md:gap-0 gap-10'>
             <div className='min-w-[20%] order-2 md:order-1 flex justify-center items-center text-center'>
                 <Link to={'/transaction/Income'} className='bg-[#00C897] px-5 md:py-4 py-2 rounded-full MonumentExtended-Black text-white'>Add Income</Link>
